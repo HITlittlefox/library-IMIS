@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+        version="2.0">
+
+    <description>functions library</description>
+    <display-name>functions</display-name>
+    <tlib-version>1.1</tlib-version>
+    <short-name>sum</short-name>
+    <uri>http://com.cn.cal/functions</uri>
+
+    <function>
+        <name>add</name>
+        <function-class>com.Calculator.new_CalculatorFunction</function-class>
+        <function-signature>double add(double,double)</function-signature>
+    </function>
+
+    <function>
+        <name>sub</name>
+        <function-class>com.Calculator.new_CalculatorFunction</function-class>
+        <function-signature>double sub(double,double)</function-signature>
+    </function>
+
+    <function>
+        <name>mul</name>
+        <function-class>com.Calculator.new_CalculatorFunction</function-class>
+        <function-signature>double mul(double,double)</function-signature>
+    </function>
+
+    <function>
+        <name>mood</name>
+        <function-class>com.Calculator.new_CalculatorFunction</function-class>
+        <function-signature>double mod(double,double)</function-signature>
+    </function>
+
+</taglib>

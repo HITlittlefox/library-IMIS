@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         id="WebApp_ID" version="4.0">
+    <display-name>MyJ2EEWeb</display-name>
+    <welcome-file-list>
+        <welcome-file>login.jsp</welcome-file>
+        <welcome-file>login.htm</welcome-file>
+        <welcome-file>login.html</welcome-file>
+        <welcome-file>register.jsp</welcome-file>
+
+        <welcome-file>index.htm</welcome-file>
+        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>default.html</welcome-file>
+        <welcome-file>default.htm</welcome-file>
+        <welcome-file>default.jsp</welcome-file>
+    </welcome-file-list>
+    <servlet>
+        <servlet-name>CheckUser</servlet-name>
+        <servlet-class>com.servlet.UserServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CheckUser</servlet-name>
+        <url-pattern>/CheckUser</url-pattern>
+    </servlet-mapping>
+    <filter>
+        <filter-name>CharSetFilter</filter-name>
+        <filter-class>com.filter.CharSetFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>CharSetFilter</filter-name>
+        <url-pattern>/MyJ2EEWeb_war/*</url-pattern>
+    </filter-mapping>
+
+    <!--    主页过滤器-->
+    <filter>
+        <filter-name>MyFilter</filter-name>
+        <filter-class>com.filter.MyFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>MyFilter</filter-name>
+        <url-pattern>/main.jsp</url-pattern>
+    </filter-mapping>
+
+    <servlet>
+        <servlet-name>GetPhoto</servlet-name>
+        <servlet-class>com.photos.GetPhoto</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetPhoto</servlet-name>
+        <url-pattern>/GetPhoto</url-pattern>
+    </servlet-mapping>
+
+    <!--    <servlet>-->
+    <!--        <servlet-name>ConnectionUtil</servlet-name>-->
+    <!--        <servlet-class>com.db.javaeeweb.util.ConnectionUtil</servlet-class>-->
+    <!--    </servlet>-->
+    <!--    <servlet-mapping>-->
+    <!--        <servlet-name>login-check</servlet-name>-->
+    <!--        <url-pattern>/login-check</url-pattern>-->
+    <!--    </servlet-mapping>-->
+    <!--    <servlet>-->
+    <!--        &lt;!&ndash; servlet的名称 &ndash;&gt;-->
+    <!--        <servlet-name>index</servlet-name>-->
+    <!--        &lt;!&ndash; servlet的class名称 &ndash;&gt;-->
+    <!--        <servlet-class>com.servlet.IndexServlet</servlet-class>-->
+    <!--        &lt;!&ndash; servlet的初始化参数，在配置中不会起作用，而是供程序使用，是软加载的 &ndash;&gt;-->
+    <!--        <init-param>-->
+    <!--            &lt;!&ndash; 这里不是路径配置，这里是供程序读取的参数 &ndash;&gt;-->
+    <!--            <param-name>pindex</param-name>-->
+    <!--            <param-value>index.jsp</param-value>-->
+    <!--        </init-param>-->
+    <!--    </servlet>-->
+    <!--    &lt;!&ndash; 这里是路径配置 &ndash;&gt;-->
+    <!--    <servlet-mapping>-->
+    <!--        &lt;!&ndash; 指定了是哪个servlet &ndash;&gt;-->
+    <!--        <servlet-name>index</servlet-name>-->
+    <!--        &lt;!&ndash; 对应的目录为根目录，级该servlet的路径便是localhost/项目名称/index &ndash;&gt;-->
+    <!--        <url-pattern></url-pattern>-->
+    <!--        &lt;!&ndash; 对应的目录为localhost/项目名称/index &ndash;&gt;-->
+    <!--        &lt;!&ndash; <url-pattern>/index</url-pattern>  &ndash;&gt;-->
+    <!--    </servlet-mapping>-->
+
+
+</web-app>

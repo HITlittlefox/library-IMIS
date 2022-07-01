@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+    <!-- 配置handlerMapping处理器映射器，可省略
+    <bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>-->
+    <!-- 配置处理器适配器，可省略
+    <bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"/> -->
+    <!-- 配置自定义处理器
+    <bean name="/hello.do" class="controllers.FirstController"/> -->
+
+    <!--1、配置handlerMapping处理器映射器和适配器，可省略 -->
+    <bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>
+    <bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"/>
+    <!--2、配置自定义控制器 -->
+    <bean name="/main.do" class="controllers.FirstController"/>
+    <!--3、配置内部视图解析器 -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <!--逻辑视图前缀-->
+        <!--        <property name="prefix" value="/WEB-INF/jsp/"/>-->
+        <!--逻辑视图后缀-->
+        <!--        <property name="suffix" value=".jsp"/>-->
+    </bean>
+    <!-- 配置组件扫描器-->
+    <context:component-scan base-package="controllers"/>
+
+
+    <!--    RedirectAttributes专门用于携带重定向参数，它继承自Model接口，底层仍然使用ModelMap实现。要使用RedirectAttributes参数，需要在springmvc.xml中注册注解驱动：-->
+    <mvc:annotation-driven/>
+
+
+    <!--配置BeanNameViewResolver类型的视图解析器-->
+    <bean class="org.springframework.web.servlet.view.BeanNameViewResolver">
+        <!--设置优先级为5，比内部视图解析器高，优先使用-->
+        <property name="order" value="5"></property>
+    </bean>
+    <bean id="baidu" class="org.springframework.web.servlet.view.RedirectView">
+        <property name="url" value="http://www.baidu.com"></property>
+    </bean>
+    <bean id="mail163" class="org.springframework.web.servlet.view.RedirectView">
+        <property name="url" value="http://mail.163.com"></property>
+    </bean>
+
+    <!--    &lt;!&ndash;配置异常处理器&ndash;&gt;-->
+    <!--    <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">-->
+    <!--        <property name="exceptionMappings">-->
+    <!--            <props>-->
+    <!--                <prop key="myexceptions.NameException">forward:/nameError.jsp</prop>-->
+    <!--                <prop key="myexceptions.PasswordException">forward:/passwordError.jsp</prop>-->
+    <!--            </props>-->
+    <!--        </property>-->
+    <!--        <property name="defaultErrorView" value="forward:/defaultError.jsp"></property>-->
+    <!--        <property name="exceptionAttribute" value="ex"></property>-->
+    <!--    </bean>-->
+
+
+    <!--配置异常处理器-->
+    <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+        <property name="exceptionMappings">
+            <props>
+                <prop key="myexceptions.NameException">forward:/nameError.jsp</prop>
+                <prop key="myexceptions.PasswordException">forward:/passwordError.jsp</prop>
+                <prop key="myexceptions.LoginExceptino">forward:/wrongflag.jsp</prop>
+
+            </props>
+        </property>
+        <property name="defaultErrorView" value="forward:/defaultError.jsp"/>
+        <property name="exceptionAttribute" value="ex"></property>
+    </bean>
+
+</beans>

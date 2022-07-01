@@ -1,0 +1,63 @@
+<html lang="zh">
+	<head>
+		<title>注册用户惟一性检查</title>
+		<meta http-equiv="content-type" content="text/html; charset=gb2312">
+	</head>
+	<body>
+		<form name="form1" action="" method="POST">
+			请输入注册用户名：
+			<input type="text" name="loginName">
+			<input type="button" name="checkLoginName" value="有效性检查"
+			       onclick="beginCheck()"><br/>
+			请输入注册密码：<input type="text" name="password"><br/>
+			<input type="submit" value="注册">
+		</form>
+	</body>
+	<script language="javascript">
+        //定义一个变量用于存放XMLHttpRequest对象
+        var xmlHttp;
+
+        //该函数用于创建一个XMLHttpRequest对象
+        function createXMLHttpRequest() {
+            if (window.ActiveXObject)
+                xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+            else if (window.XMLHttpRequest)
+                xmlHttp = new XMLHttpRequest();
+        }
+
+        //这是一个启动AJAX异步通信的方法
+        function beginCheck() {
+            // var tempLoginName = document.all.loginName.value;
+
+            var tempLoginName = document.getElementsByName("loginName")['0'].value;
+
+            if (tempLoginName == "") {//如果尚未输入注册名
+                alert("对不起，请您输入注册名!");
+                return;
+            }
+            createXMLHttpRequest();//创建一个XMLHttpRequest对象
+            xmlHttp.onreadystatechange = processor; //将状态触发器绑定到一个函数
+            //通过GET方法向指定的URL建立服务器的调用
+            xmlHttp.open("GET", "CheckUser?loginName=" + tempLoginName);
+            xmlHttp.send(null); //发送请求
+        }
+
+        //这是一用来处理状态改变的函数
+        function processor() {
+            //定义一个变量用于存放从服务器返回的响应结果
+            var responseContext;
+            if (xmlHttp.readyState == 4) { //如果响应完成
+                if (xmlHttp.status == 200) {//如果返回成功
+                    //取出服务器的响应内容
+                    responseContext = xmlHttp.responseText;
+                    //如果注册名检查有效
+                    if (responseContext.indexOf("true") != -1)
+                        alert("恭喜您，该注册名有效！");
+                    else
+                        alert("对不起，该注册名已被使用！");
+                }
+            }
+        }
+	</script>
+
+</html>

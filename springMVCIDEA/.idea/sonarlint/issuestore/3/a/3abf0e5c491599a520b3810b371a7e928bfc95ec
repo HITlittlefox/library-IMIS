@@ -1,0 +1,30 @@
+
+a	java:S112‡"FDefine and throw a dedicated exception instead of using a generic one.(Öªú¼ýÿÿÿÿ
+\	java:S112ƒ"FDefine and throw a dedicated exception instead of using a generic one.(ü­ÐŒ
+V	java:S125"<This block of commented-out lines of code should be removed.(ƒë–ùÿÿÿÿ
+Q	java:S125"<This block of commented-out lines of code should be removed.(’ÊÎ
+Q	java:S1254"<This block of commented-out lines of code should be removed.(’ÊÎ
+P	java:S125Y"<This block of commented-out lines of code should be removed.(ÓÜñ+
+Q	java:S125u"<This block of commented-out lines of code should be removed.(î×» 
+Q	java:S125y"<This block of commented-out lines of code should be removed.(î×» 
+Q	java:S125"<This block of commented-out lines of code should be removed.(˜ÏÛù
+W	java:S125¼"<This block of commented-out lines of code should be removed.(†‡Åæþÿÿÿÿ
+R	java:S125ß"<This block of commented-out lines of code should be removed.(ÒËáÕ
+R	java:S125ò"<This block of commented-out lines of code should be removed.(ÒËáÕ
+T	java:S106œ"9Replace this use of System.out or System.err by a logger.(­ ‘ˆüÿÿÿÿ
+O	java:S106"9Replace this use of System.out or System.err by a logger.(ö¡¹ê
+O	java:S106©"9Replace this use of System.out or System.err by a logger.(’Êªƒ
+O	java:S106«"9Replace this use of System.out or System.err by a logger.(êÙ¸…
+T	java:S106¬"9Replace this use of System.out or System.err by a logger.(ªÓ¼áþÿÿÿÿ
+p	java:S100±"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¢×ð…üÿÿÿÿ8ËäÑ±0
+Y	java:S125³"<This block of commented-out lines of code should be removed.(î×» 8ÌäÑ±0
+k	java:S100º"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¬¶à°8ÍäÑ±0
+Y	java:S125¼"<This block of commented-out lines of code should be removed.(î×» 8ÏäÑ±0
+k	java:S100Ã"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ßÞª†8ÐäÑ±0
+Y	java:S125Å"<This block of commented-out lines of code should be removed.(î×» 8ÒäÑ±0
+s
+java:S1128L"QRemove this unused import 'org.springframework.web.bind.annotation.RequestParam'.(Â¬À·ùÿÿÿÿ8×ùÑ±0
+[
+java:S1128S"9Remove this unused import 'org.springframework.ui.Model'.(ê†ýÿÿÿÿ8ØùÑ±0
+x
+java:S1128T"[Remove this unused import 'org.springframework.web.servlet.mvc.support.RedirectAttributes'.(ìçÚË8ØùÑ±0

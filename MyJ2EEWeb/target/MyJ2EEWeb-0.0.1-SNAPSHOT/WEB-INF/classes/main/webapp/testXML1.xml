@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<linkmans>
+    <linkman>
+        <id>001</id>
+        <userName>张三</userName>
+        <userPwd>A公司</userPwd>
+    </linkman>
+    <linkman>
+        <id>001</id>
+        <userName>张三</userName>
+        <userPwd>A公司</userPwd>
+    </linkman>
+</linkmans>
